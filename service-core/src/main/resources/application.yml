@@ -1,0 +1,19 @@
+server:
+  port: 8110 # 服务器端口
+
+spring:
+  profiles:
+    active: dev # 环境信息
+
+  datasource: #mysql数据库连接
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db230926?useUnicode=true&characterEncoding=utf-8&useSSL=false&nullCatalogMeansCurrent=true&serverTimezone=UTC
+    username: root
+    password: lzq123
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 日志输出
+#    map-underscore-to-camel-case: true # 下划线变驼峰
+  mapper-locations: classpath:pers/bol/core/mapper/xml/*.xml
